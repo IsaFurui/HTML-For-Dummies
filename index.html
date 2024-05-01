@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML For Dummies</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        p{
+            margin-top: 0;
+            text-align: justify;
+            
+        }
+        
+        header{
+            width: 100%;
+            height: 100px;
+            padding: 10px 0 10px 0;
+            text-align: center;
+            --float: left;
+            background-color:  #d580ff;
+            
+        }
+        
+        nav{
+            width: 18%;
+            height: 100%;
+            float: left;
+            padding-right: 2%;
+            background-color:  #0d0d0d;
+            position: fixed;
+        }
+        
+        main{
+            width: 80%;
+            height: 100%;
+            background-color: black;
+            text-align: center;
+            float: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            float: right;
+        }
+        
+        div{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        
+        h3{
+            margin-bottom: 2px;
+            text-align: justify;
+            padding-bottom: 10px;
+        }
+        
+        footer{
+            width: 100%;
+            height: 80px;
+            background-color: yellow;
+            text-align: center;
+            float: left;
+        }
+        h1{
+            margin-bottom: 0;
+        }
+        
+        h4{
+            margin-top: 0;
+        }
+        
+        th, td{
+            border-bottom: 1px solid #ddd;
+            padding: 15px;
+        }
+        
+        table{
+            margin-right: auto;
+            margin-left: auto;
+            width: 80%;
+        }
+        
+        hr{
+            margin-top: 0px;
+            margin-bottom: 10px;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+        
+        h2{
+            margin-bottom: 10px;
+        }
+        
+        .code{
+            flex-grow: 1; 
+            flex-shrink: 1; 
+            text-align: left; 
+            font-family: SFMono-Regular, Menlo, Consolas;
+            font-size: 85%;
+            tab-size: 2; 
+            padding: 15px 16px 20px 20px; 
+            min-height: 1em; 
+            background-color: rgba(255, 255, 255, 0.81); 
+            white-space: pre-line;   
+            width: 80%;
+            margin-right: 10%;
+            margin-left: 10%;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        
+        li{
+            display: flex; 
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        @media screen and (max-width: 600px) {
+            .section {
+                max-width: 90%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML For Dummies</h1>
+        <h4>Um guia ou dicionário para aprender tags HTML</h4>
+    </header>
+    <nav>
+        <h6 style="text-align: center;">Índice</h6>
+        <ul>
+            <li><a href="#tags">Tags</a></li>
+            <li><a href="#estrutura">Estrutura Raíz de uma Página Web</a></li>
+            <li><a href="#elementos">Elementos Básicos</a></li>
+            <li><a href="#tipo">Tipo e Composição das Tags</a></li>
+            <li><a href="#formatacao">Tags de Formatação</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <div class="tags">
+                <h2 id="tags">Tags</h2>
+                <hr>
+                <p>
+                    Tudo que está entre os caracteres “<” e “>”, servem para <strong>informar ao navegador a estrutura e o significado do conteúdo</strong>. Existe um conjunto de tags padronizado pelo W3C, logo não é possível criar próprias tags <abbr title="HyperText Markup Language">HTML</abbr>.
+                </p>
+                <p>
+                    As tags devem ser obrigatoriamente fechadas com o mesmo nome do início da tag + “/” antes de seu nome.
+                </p>
+                <blockquote>
+                    <i>A tags que fogem desse padrão como a tag de quebra de linha &lt;br/&gt, que usa o “/” dentro da tag, porém a quebra de linha se tornou obsoleta no HTML5.</i>
+                </blockquote>
+            </div>
+            
+            <br>
+            
+            
+            <div class="tags_raizes">
+                <h2 id="estrutura">Estrutura Raíz de uma Página Web</h2>
+                <hr>
+                <h3>Tag Raíz - HTML </h3>
+                <p>
+                    Raiz do documento que deve ser aberta e fechada. É possível utilizar dentro da tag raiz o atributo lang, como atributo global, para definir o idioma da página.
+                </p>
+                
+                
+                <h3>Cabeçalho - head</h3>
+                <p>Onde contém as tags para manter o documento em ordem. Dentro dela, temos as tags:</p>
+                <table>
+                    <tr>
+                        <th>Tag</th>
+                        <th>Para que serve</th>
+                    </tr>
+                    <tr>
+                        <td><h5>Title</h5></td>
+                        <td><mark>Título do documento</mark>, sendo visualizada na barra de título do navegador</td>
+                    </tr>
+                    <tr>
+                        <td><h5>Meta</h5></td>
+                        <td>Engloba as <u>metainformações</u>, como descrição da página, palavras-chave, etc</td>
+                    </tr>
+                    <tr>
+                        <td><h5>Script</h5></td>
+                        <td>Responsável pela <u>inclusão ou definição de scripts</u> relacionados ao documento</td>
+                    </tr>
+                    <tr>
+                        <td><h5>Link</h5></td>
+                        <td>Responsável pela <u>inclusão das folhas de estilo externas</u> relacionadas ao documento. Possibilita também a inclusão de favicons (pequenos ícones que aparecem na barra de endereços do navegador)</td>
+                    </tr>
+                    <tr>
+                        <td><h5>Style</h5></td>
+                        <td>Também é responsável pelo vínculo das <u>folhas de estilo</u> quando elas são declaradas <u>diretamente no documento</u></td>
+                    </tr>
+                </table>
+                
+                <br>
+                
+                <h3>Corpo - body</h3>
+                <p>Responsável pela estruturação do documento, seu conteúdo e sua apresentação.</p>
+            </div>
+            
+            <br>
+            
+            <div class="elementos-basicos">
+                <h2 id="elementos">Elementos Básicos</h2>
+                <hr>
+                <h3>Cabeçalho - header </h3>
+                <p>Fica na página superior da página, onde se agrupa o título da página, sua logo, etc.</p>
+                
+                <h3>Barra de Navegação - nav </h3>
+                <p>Podendo ser tanto na horizontal quanto na vertical, contém os links de navegação para as páginas/seções do site.</p>
+                
+                <h3>Conteúdo - main</h3>
+                <p>Conteúdo principal da página que pode ser dividido em seções (section).</p>
+                
+                <h3>Barra Lateral - aside </h3>
+                <p>Pode conter tanto links de navegação quanto informações para complementar o conteúdo principal</p>
+                
+                <h3>Rodapé - footer</h3>
+                <p>Área final da página, onde são colocados links, avisos de direitos autorais, informações sobre o proprietário da página e informações sobre o site.</p>
+                
+                
+            </div>
+            
+            <br>
+            
+            <div class="composicao-tag">
+                <h2 id="tipo">Tipo e Composição das Tags</h2>
+                <hr>
+                <p>Os tipos de tags podem ser: estruturais, textuais e semânticas. Além disso, as tags podem ser atributos, estes são compostos por nome e um valor.</p>
+                <div class="code">
+                    <code>&ltimg src=”imagem.jpg” alt=”minha imagem”/&gt</code>
+                </div>
+                <p>A tag image possui os atributos src e alt. O atributo src (source) define o endereço e o nome da imagem. Já o atributo alt define o que será exibido no navegador caso a imagem não carregue.</p>
+                
+                <h3>Atributos Mais Importantes</h3>
+                <p>Os atributos mais importantes para desenvolver uma página são:</p>
+                
+                <ol>
+                    <li>ID: Utilizado para definir um identificador único para tag de um documento.</li>
+                    <li>Class: Pode ser usado em uma ou mais tags, com essa identificação, é possível fazer referência a um mais atributos para inserir estilização visual nas páginas através de CSS e interação através de JavaScript.</li>
+                </ol>
+            </div>
+            
+            <div class="tags-formatacao">
+                <h2 id="formatacao">Tags de Formatação</h2>
+                <hr>
+                <p>Apesar de toda formatação ser feita no CSS, há algumas tags direcionadas a formatação visual do conteúdo no HTML (que ainda podem ser substituídas no CSS):</p>
+                <table>
+                    <tr>
+                        <th>Tag</th>
+                        <th>Para que serve</th>
+                    </tr>
+                    <tr>
+                        <td><h5>&ltb&gt</h5></td>
+                        <td>De bold, aplica o efeito de negrito</td>
+                    </tr>
+                    <tr>
+                        <td><h5>&ltstrong&gt</h5></td>
+                        <td>Equivalente ao negrito e o marca como importante.</td>
+                    </tr>
+                    <tr>
+                        <td><h5>&lti&gt</h5></td>
+                        <td>De italic, aplica o efeito de itálico.</td>
+                    </tr>
+                    <tr>
+                        <td><h5>&ltem&gt</h5></td>
+                        <td>Equivalente ao itálico e marca como importante em um texto.</td>
+                    </tr>
+                    <tr>
+                        <td><h5>&ltu&gt</h5></td>
+                        <td>De underline, aplica o texto de sublinhado.</td>
+                    </tr>
+                    <tr>
+                        <td><h5>&ltmark&gt</h5></td>
+                        <td>Se refere a um texto marcado.</td>
+                    </tr>
+                    <tr>
+                        <td><h5>&ltdel&gt</h5></td>
+                        <td> Risca o elemento ao meio. Ex: <del>elemento</del></td>
+                    </tr>
+                    <tr>
+                        <td><h5>&ltsup&gt</h5></td>
+                        <td>Deixa o texto sobescrito. Ex: 2<sup>2</sup> </td>
+                    </tr>
+                    <tr>
+                        <td><h5>&ltsub&gt</h5></td>
+                        <td>Deixa o texto subescrito. Ex: <sub>exemplo</sub> </td>
+                    </tr>
+                    <tr>
+                        <td><h5>&ltabbr&gt</h5></td>
+                        <td>usado com siglas, quando se passa o mouse sobre a sigla, o significado da sigla aparece em uma caixa. Ex: <abbr title="Organização das Nações Unidas">ONU</abbr> </td>
+                    </tr>
+                    <tr>
+                        <td><h5>&ltsmall&gt</h5></td>
+                        <td>Define um texto pequeno. Ex: <small>texto pequeno</small> </td>
+                    </tr>
+                    <tr>
+                        <td><h5>&ltfont&gt</h5></td>
+                        <td>Define as características da fonte, podendo alterar cor, tamanho e tipo da fonte. Ex: <font size="3" color="orange" face="Verdana">texto pequeno</font> </td>
+                    </tr>
+                </table>
+                <br>
+            </div>
+            
+        </section>
+    </main>
+    
+</body>
+</html>
